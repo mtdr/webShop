@@ -1,0 +1,441 @@
+#wrapper {
+    color: #ab2031;
+}
+
+#search-row {
+    position: relative;
+    left:0;
+    top: -10px;
+    width: 350px;
+    height: 30px;
+    margin: 5px 5px 5px 80px;
+    display: inline-block;
+    padding: 5px;
+}
+
+#search-row input{
+    margin-top: 6px;
+    width: 325px;
+    height: 24px;
+}
+
+.search-button {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    height: 24px;
+    background-color: white;
+}
+
+.search-button:active {
+    background-color: darkred;
+}
+
+#logo {
+    display: inline-block;
+    margin: 8px 0px 0px 7px;
+    float:left;
+
+    -webkit-transition: transform 5s;
+    -moz-transition: transform 5s ;
+    -ms-transition: transform 5s ;
+    -o-transition: transform 5s ;
+    transition: transform 5s ;
+
+}
+
+#logo:hover {
+    transform: rotate(45deg);
+}
+
+#logo img {
+    width: 35px;
+    height: 65%;
+}
+
+#search-row img{
+    margin-left: 5px;
+    width: auto;
+    height: 15px;
+}
+
+header {
+    z-index: 9999;
+    background-color: white;
+    border-bottom: 3px solid darkred;
+    position: fixed;
+    height: 50px;
+    left: 0px;
+    top: 0px;
+    right:0px;
+}
+
+#languages {
+    float: right;
+    display: inline-block;
+    margin: 10px 10px 10px 10px;
+}
+
+#language-panel {
+    height: auto;
+    width: auto;
+    list-style-type: none;
+    margin: 6px 0 0 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+.small-pic {
+    border: 1px solid red;
+    padding: 0;
+    float: left;
+}
+
+.small-pic a {
+    display: block;
+    padding: 0px;
+    background-color: #dddddd;
+}
+
+.small-pic img{
+    width:20px;
+    height:auto;
+}
+
+#nav-div {
+    position: relative;
+    display: inline-block;
+    top: 8px;
+    margin: 0 10px 10px 100px;
+    text-align: center;
+}
+
+.nav a:visited {
+    text-decoration: none;
+}
+
+.nav a:active {
+    background-color: darkred;
+    color: white;
+}
+
+#navigation-list {
+    height: auto;
+    width: auto;
+    list-style-type: none;
+    margin: 6px 0 0 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+.nav {
+    display: inline-block;
+    width: 125px;
+    height: 35px;
+    /*border-top: 1px solid red;*/
+    /*border-right: 1px solid red;*/
+    /*border-left: 1px solid red;*/
+    background-color: whitesmoke;
+    color: red;
+    padding: 0;
+    float: left;
+}
+
+.nav a {
+    height: 20px;
+    display: block;
+    padding-top: 15px;
+
+    text-decoration: none;
+}
+
+
+
+#content {
+    width: auto;
+    height: 1050px;
+    position: relative;
+    left: 0;
+    /*top: 50px;*/
+    right:0;
+    bottom:20px;
+    border-bottom: 1px solid darkred;
+}
+
+#photo-div {
+    width: 500px;
+    height: 500px;
+    display: inline-block;
+    float:left;
+}
+
+#large-text {
+    position: relative;
+    width: 500px;
+    text-align: center;
+    color: darkred;
+    font: "Times New Roman";
+    font-weight: bold;
+    font-size: x-large;
+}
+
+#all-info {
+    height: 500px;
+    width: 725px;
+    display: inline-block;
+    float: right;
+}
+
+#all-info, #photo-div {
+    margin-top: 75px;
+    border: 1px solid red;
+}
+
+.language-ul, .navigation-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.dropbtn {
+    display: inline-block;
+    color: darkred;
+    text-align: center;
+    text-decoration: none;
+}
+
+.nav a:hover, .dropdown:hover .dropbtn {
+    background-color: darkred;
+    color: white;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: darkred;
+}
+
+.nav:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-photo {
+    position: relative;
+    margin: 15px;
+    display: inline-block;
+}
+
+.dropdown-photo img {
+    width: 200px;
+    height: auto;
+}
+
+
+.dropdown-photo-content img {
+    width: 500px;
+    height: auto;
+}
+
+.dropdown-photo-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-photo:hover .dropdown-photo-content {
+    position: fixed;
+    left: 25%;
+    top: 10%;
+
+    /*top: 100px;*/
+    /*right: 200px;*/
+    /*bottom: 200px;*/
+    /*left: 200px;*/
+    display: block;
+    z-index: 1;
+}
+
+.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+#buy-block, #info-block {
+    position: relative;
+    margin: 0;
+    width: 700px;
+    height: 190px;
+    padding: 15px;
+}
+
+#car-title {
+    float: left;
+    text-align: center;
+    color: black;
+    font-size: large;
+}
+
+#price {
+    float: right;
+    text-align: center;
+    color: black;
+    font-size: medium;
+    background-color: darkgray;
+    -webkit-transition: transform 1s;
+    -moz-transition: transform 1s ;
+    -ms-transition: transform 1s ;
+    -o-transition: transform 1s ;
+    transition: transform 1s ;
+}
+
+#price img{
+    float: left;
+    -webkit-transition: transform 1s;
+    -moz-transition: transform 1s ;
+    -ms-transition: transform 1s ;
+    -o-transition: transform 1s ;
+    transition: transform 1s ;
+}
+
+#price img:hover {
+    transform:rotate(1turn);
+
+}
+
+#owner {
+    float: left;
+    top: 60px;
+    text-align: center;
+    color: black;
+    font-size: medium;
+}
+
+#owner img {
+    float: left;
+    -webkit-transition: transform 1s;
+    -moz-transition: transform 1s ;
+    -ms-transition: transform 1s ;
+    -o-transition: transform 1s ;
+    transition: transform 1s ;
+
+}
+
+#owner img:hover {
+    transform: rotateY(1turn);
+}
+
+
+
+#buy-button {
+    float: right;
+    top: 60px;
+    /*top:-56px;*/
+    text-align: center;
+    color: black;
+    font-size: medium;
+}
+
+#buy-button,#owner,#price,#car-title {
+    position: relative;
+    width: 300px;
+    height: 70px;
+    display: inline-block;
+    /*border: 1px solid red;*/
+}
+
+#price p {
+    font-weight: bold;
+    width:150px;
+}
+
+#price:hover {
+    background-color: dimgray;
+}
+
+#owner p {
+    width: 150px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.buy {
+    margin-top: 5px;
+    width: 290px;
+    height: 60px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: large;
+    background-color: green;
+
+}
+.buy:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #448c20), color-stop(1, #5ef513));
+    background:-webkit-linear-gradient(top, #448c20 5%, #5ef513 100%);
+    background-color:#448c20;
+}
+.buy:active {
+    position:relative;
+    top:1px;
+}
+
+.nav-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 650px;
+    background-color: red
+}
+
+.nav-li {
+    float: left;
+    width: 215px;
+}
+
+.nav-li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.nav-li a:hover {
+    background-color: darkred;
+}
+
+.tab-content {
+    width: 650px;
+    background-color: lavender;
+    border-bottom: 3px solid orange;
+}
+
+.info-ul {
+    width: 650px;
+    padding: 20px;
+    margin: 0;
+}
+
+#reviews {
+    margin-top: -16px;
+}
