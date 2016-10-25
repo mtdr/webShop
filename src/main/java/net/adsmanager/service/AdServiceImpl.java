@@ -25,21 +25,21 @@ public class AdServiceImpl implements AdService{
 
     @Override
     public void updateAd(Ad ad) {
-
+        this.adDao.updateAd(ad);
     }
 
     @Override
     public void removeAd(int id) {
-
+        this.adDao.removeAd(id);
     }
 
     @Override
     public Ad getAdById(int id) {
-        return null;
+        return this.adDao.getAdById(id);
     }
 
     @Override
     public List<Ad> listAds() {
-        return null;
+        return this.adDao.listAds();
     }
 }

@@ -21,6 +21,7 @@
           <file>file://$MODULE_DIR$/src/main/java/net/twasink/hsqldbtest/testContext.xml</file>
           <file>file://$MODULE_DIR$/src/test/java/hsqldbtest/testContext.xml</file>
           <file>file://$MODULE_DIR$/src/test/java/hsqldbtest/testContext.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml</file>
         </fileset>
         <fileset id="fileset2" name="Spring Application Context (2)" removed="false">
           <file>file://$MODULE_DIR$/src/test/java/net/twasink/hsqldbtest/testContext.xml</file>
