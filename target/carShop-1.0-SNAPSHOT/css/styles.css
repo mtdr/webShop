@@ -176,7 +176,7 @@ header {
     width: 500px;
     text-align: center;
     color: darkred;
-    font: "Times New Roman";
+    /*font: Tahoma;*/
     font-weight: bold;
     font-size: x-large;
 }
@@ -438,4 +438,23 @@ header {
 
 #reviews {
     margin-top: -16px;
+}
+
+.service-buttons {
+    position: relative;
+    left:0;
+    top: -10px;
+    width: 350px;
+    height: 30px;
+    margin: 5px 5px 5px 80px;
+    display: inline-block;
+    padding: 5px;
+}
+
+.hat-form {
+    width: 80px;
+    height: 20px;
+    padding: 0;
+    display: inline-block;
+
 }

@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>cardServlet</servlet-name>
-        <servlet-class>net.servlets.cardServlet</servlet-class>
+        <servlet-class>com.servlets.cardServlet</servlet-class>
         <init-param>
             <param-name>first</param-name>
             <param-value>1</param-value>
@@ -17,4 +17,8 @@
         <servlet-name>cardServlet</servlet-name>
         <url-pattern>/w</url-pattern>
     </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>/jsp/list.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

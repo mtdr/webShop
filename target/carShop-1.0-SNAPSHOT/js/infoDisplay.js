@@ -24,3 +24,8 @@ function show(par) {
     }
 }
 
+function setCarType() {
+    var value = document.getElementsByTagName('select')[0].value;
+    window.location='?carType=' + value;
+}
+

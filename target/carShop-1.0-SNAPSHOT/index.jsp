@@ -10,7 +10,8 @@
 <html>
 <head>
     <title>Главная</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles1.css">
+    <script src="js/infoDisplay.js"></script>
 
 </head>
 <body>
@@ -31,6 +32,19 @@
         </ul></div>
         <div id="search-row"><form action="" method="GET"><input type="search" placeholder="Введите название авто" name="search-req">
             <button class="search-button"><a href="/"><img src="img/search.png" alt="search"></a></button> </form>
+        </div>
+        <div class="service-buttons">
+
+            <form action="#" class="hat-form">
+                <button type="submit" name="signin-button" class="hat-button">ВХОД</button>
+            </form>
+            <form action="#" class="hat-form">
+                <button type="submit" name="history-button" class="hat-button">ИСТОРИЯ</button>
+            </form>
+            <form action="#" class="hat-form-box">
+                <button type="submit" name="box-button" onclick="alert('Корзина')"><img src="img/shoppingbag.png" alt="bag"></button>
+            </form>
+
         </div>
         <div id="languages">
             <ul id="language-panel">
@@ -86,7 +100,43 @@
                 <div id="buy-button"><button class="buy" name="buy-car" type="submit" value="carId">Купить</button></div>
             </div>
             <div id="info-block">
+                <div class="tab-nav">
+                    <ul class="nav-ul">
+                        <li class="nav-li"><a href="#" id="li-a1" class="tab-menu">Кратко</a></li>
+                        <li class="nav-li"><a href="#" id="li-a2" class="tab-menu">Подробно</a></li>
+                        <li class="nav-li"><a href="#" id="li-a3" class="tab-menu">Отзывы</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="short">
+                            <ul class="info-ul">
+                                <li class="info-li">Год выпуска: 2016</li>
+                                <li class="info-li">Пробег: 45 000 км</li>
+                                <li class="info-li">Кузов: седан</li>
+                                <li class="info-li">Цвет: баклажан</li>
+                            </ul>
+                        </div>
+                        <div id="detail">
+                            <ul class="info-ul">
+                                <li class="info-li">Год выпуска: 2016</li>
+                                <li class="info-li">Пробег: 45 000 км</li>
+                                <li class="info-li">Кузов: седан</li>
+                                <li class="info-li">Цвет: баклажан</li>
+                                <li class="info-li">Коробка: автоматическая</li>
+                                <li class="info-li">Двигатель: 1.6 / 105 л.с. / бензин</li>
+                                <li class="info-li">Руль: левый</li>
+                                <li class="info-li">ПТС: оригинал</li>
+                                <li class="info-li">Количество владельцев: 2</li>
+                            </ul>
+                        </div>
+                        <div id="reviews">
+                            <ul class="reviews-ul">
+                                <li><b>Владимир</b> Очень хорошо</li>
+                                <li><b>Владимир</b> Очень плохо</li>
+                            </ul>
+                        </div>
 
+                    </div>
+                </div>
             </div>
 
         </div>
