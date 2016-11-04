@@ -98,22 +98,37 @@ public class cardServlet extends HttpServlet {
         String numOfOwners = rb.getString("numOfOwners");
         String PTS = rb.getString("PTS");
 
-        String yearIssInfo = rb.getString(AdList.getAdList().get(id).getYear());
-        String mileageInfo = rb.getString(AdList.getAdList().get(id).getMileage());
-        String bodyInfo = rb.getString(AdList.getAdList().get(id).getCarType());
-        String carColourInfo = rb.getString(AdList.getAdList().get(id).getColour());
-        String transmissionInfo = rb.getString(AdList.getAdList().get(id).getTransmission());
-        String engineInfoV = rb.getString(AdList.getAdList().get(id).getEngineV());
-        String engineInfoPower = rb.getString(AdList.getAdList().get(id).getEnginePower());
-        String engineInfoFuel = rb.getString(AdList.getAdList().get(id).getEngineFuel());
-        String wheelInfo = rb.getString(AdList.getAdList().get(id).getWheel());
-        String numOfOwnersInfo = rb.getString(AdList.getAdList().get(id).getNumOfOwners());
-        String PTSInfo = rb.getString(AdList.getAdList().get(id).getPTS());
+//        String yearIssInfo = rb.getString(AdList.getAdList().get(id).getYear());
+//        String mileageInfo = rb.getString(AdList.getAdList().get(id).getMileage());
+//        String bodyInfo = rb.getString(AdList.getAdList().get(id).getCarType());
+//        String carColourInfo = rb.getString(AdList.getAdList().get(id).getColour());
+//        String transmissionInfo = rb.getString(AdList.getAdList().get(id).getTransmission());
+//        String engineInfoV = rb.getString(AdList.getAdList().get(id).getEngineV());
+//        String engineInfoPower = rb.getString(AdList.getAdList().get(id).getEnginePower());
+//        String engineInfoFuel = rb.getString(AdList.getAdList().get(id).getEngineFuel());
+//        String wheelInfo = rb.getString(AdList.getAdList().get(id).getWheel());
+//        String numOfOwnersInfo = rb.getString(AdList.getAdList().get(id).getNumOfOwners());
+//        String PTSInfo = rb.getString(AdList.getAdList().get(id).getPTS());
+//
+//        String carTitle = rb.getString(AdList.getAdList().get(id).getTitle());
+//        String price = rb.getString(AdList.getAdList().get(id).getPrice());
+//        String owner = rb.getString(AdList.getAdList().get(id).getOwner());
 
-        String carTitle = rb.getString(AdList.getAdList().get(id).getTitle());
-        String price = rb.getString(AdList.getAdList().get(id).getPrice());
-        String owner = rb.getString(AdList.getAdList().get(id).getOwner());
+        String yearIssInfo = AdList.getAdList().get(id).getYear();
+        String mileageInfo = AdList.getAdList().get(id).getMileage();
+        String bodyInfo = AdList.getAdList().get(id).getCarType();
+        String carColourInfo = AdList.getAdList().get(id).getColour();
+        String transmissionInfo = AdList.getAdList().get(id).getTransmission();
+        String engineInfoV = AdList.getAdList().get(id).getEngineV();
+        String engineInfoPower = AdList.getAdList().get(id).getEnginePower();
+        String engineInfoFuel = AdList.getAdList().get(id).getEngineFuel();
+        String wheelInfo = AdList.getAdList().get(id).getWheel();
+        String numOfOwnersInfo = AdList.getAdList().get(id).getNumOfOwners();
+        String PTSInfo = AdList.getAdList().get(id).getPTS();
 
+        String carTitle = AdList.getAdList().get(id).getTitle();
+        String price = AdList.getAdList().get(id).getPrice();
+        String owner = AdList.getAdList().get(id).getOwner();
 
         String reviewerName1 = rb.getString("reviewerName1");
         String reviewerText1 = rb.getString("reviewerText1");

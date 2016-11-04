@@ -604,20 +604,24 @@ option {
 }
 .model h4{
     font-size: x-large;
-    padding-bottom: 109px;
     margin-left: 135px;
     position: absolute;
     float: left;
     top: 0;
-    left: 40px;
     display: block;
-    margin-top: 0;
+    margin-right: 100px;
+    border: 2px solid red;
+    padding: 15px 55px 10px 55px;
+    margin-top: 8px;
+    left: -100px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .model-photo {
     position: absolute;
     float: left;
-    top: 70px;
+    top: 100px;
     left: 10px;
 }
 
@@ -636,7 +640,7 @@ option {
 .model-description {
     width: 250px;
     margin-left: 175px;
-    border: 1px solid black;
+    border: 2px solid red;
 
 }
 
@@ -666,13 +670,18 @@ option {
 }
 
 .model-buy-div {
-    width: 100px;
+    width: 150px;
     position: relative;
     height: 50px;
     margin: 10px;
-    border: 1px solid;
+    border: 2px solid red;
     float: right;
     text-align: center;
     color: black;
     font-size: medium;
+}
+
+.model-info-ul {
+    color: darkred;
+    list-style-type: square;
 }
