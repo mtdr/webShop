@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6001eec-e339-4de0-8df9-cf2e3e055fa7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/Utils/1.tld" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/Utils/currentDate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/carShop-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/carShop-1.0-SNAPSHOT.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/carShop-1.0-SNAPSHOT/WEB-INF/classes/com/servlets/cardServlet.class" afterPath="$PROJECT_DIR$/target/carShop-1.0-SNAPSHOT/WEB-INF/classes/com/servlets/cardServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/servlets/cardServlet.class" afterPath="$PROJECT_DIR$/target/classes/com/servlets/cardServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/servlets/cardServlet.java" afterPath="$PROJECT_DIR$/src/main/java/com/servlets/cardServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/styles1.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/styles1.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/jsp/model.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/model.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/carShop-1.0-SNAPSHOT/css/styles1.css" afterPath="$PROJECT_DIR$/target/carShop-1.0-SNAPSHOT/css/styles1.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/carShop-1.0-SNAPSHOT/jsp/list.jsp" afterPath="$PROJECT_DIR$/target/carShop-1.0-SNAPSHOT/jsp/list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/carShop-1.0-SNAPSHOT/jsp/model.jsp" afterPath="$PROJECT_DIR$/target/carShop-1.0-SNAPSHOT/jsp/model.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-    </list>
+    <list default="true" id="b6001eec-e339-4de0-8df9-cf2e3e055fa7" name="Default" comment="" />
     <ignored path="webShop.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
