@@ -10,9 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/auth-style.css">
 
-    <title><fmt:message key="authPageTitle"/></title>
     <script src="../js/infoDisplay.js"></script>
     <c:if test="${empty pageContext.request.parameterMap.lang[0]}">
         <fmt:setLocale value="ru_RU"/>
@@ -31,16 +29,19 @@
         <c:set var="lang" value="ru_RU"/>
     </c:if>
     <fmt:setBundle basename="shop"/>
+
+    <link rel="stylesheet" type="text/css" href="../css/auth-style.css">
+
+    <title><fmt:message key="authPageTitle"/></title>
 </head>
 <body>
-<%--bodyAuth--%>
 <div class="wrapper-auth">
     <h1><fmt:message key="errorMessage"/></h1>
     <form class="auth" action="j_security_check?lang=${lang}" method="POST" name="loginForm">
         <div class="language-panel">
-            <a href = "?page=${pageContext.request.parameterMap.page[0]}&lang=ru_RU" onclick="addCookie('de_DE');"> <img src = "../img/de.png" width="30" height="30"></a>
+            <a href = "?page=${pageContext.request.parameterMap.page[0]}&lang=ru_RU" onclick="addCookie('ru_RU');"> <img src = "../img/rus.png" width="30" height="30"></a>
             <a href = "?page=${pageContext.request.parameterMap.page[0]}&lang=en_GB" onclick="addCookie('en_GB');"> <img src = "../img/eng.png" width="30" height="30"></a>
-            <a href = "?page=${pageContext.request.parameterMap.page[0]}&lang=be_BY" onclick="addCookie('ru_RU');"> <img src = "../img/rus.png" width="30" height="30"></a>
+            <a href = "?page=${pageContext.request.parameterMap.page[0]}&lang=de_DE" onclick="addCookie('de_DE');"> <img src = "../img/de.png" width="30" height="30"></a>
         </div>
         <label class="label"><fmt:message key="labelLogin" /></label><br>
         <input class="input" type="text" name="j_username" placeholder="<fmt:message key="labelLogin" />" size="20"/><br>

@@ -12,7 +12,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href="../css/auth-style.css">
 
-    <title><fmt:message key="authPageTitle"/> </title>
     <script src="../js/infoDisplay.js"></script>
     <c:if test="${empty pageContext.request.parameterMap.lang[0]}">
         <fmt:setLocale value="ru_RU"/>
@@ -31,6 +30,8 @@
         <c:set var="lang" value="ru_RU"/>
     </c:if>
     <fmt:setBundle basename="shop"/>
+
+    <title><fmt:message key="authPageTitle"/> </title>
 </head>
 <body>
 <div class="wrapper-auth">

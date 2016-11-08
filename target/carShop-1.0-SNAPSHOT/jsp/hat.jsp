@@ -65,7 +65,7 @@
         <ul id="language-panel">
             <li class="small-pic"><a href="?lang=ru_RU" onclick="addCookie('ru_RU');"><img id="rus" src="../img/rus.png" alt="Russian"></a></li>
             <li class="small-pic"><a href="?lang=en_GB" onclick="addCookie('en_GB');"><img id="eng" src="../img/eng.png" alt="English"></a></li>
-            <li class="small-pic"><a href="?lang=de_DE" ><img id="de" src="../img/de.png" alt="Deutsch"></a></li>
+            <li class="small-pic"><a href="?lang=de_DE" onclick="addCookie('de_DE');"><img id="de" src="../img/de.png" alt="Deutsch"></a></li>
         </ul>
     </div>
 </header>

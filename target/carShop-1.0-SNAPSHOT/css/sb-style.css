@@ -457,6 +457,14 @@ header {
     padding-bottom: 70px;
 }
 
+.each-ad-div a{
+    text-decoration: none;
+}
+
+.each-ad-div a:hover {
+    color: red;
+}
+
 .each-ad-div img {
     position: relative;
     top: -50px;

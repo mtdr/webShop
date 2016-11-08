@@ -72,7 +72,7 @@ public class cardServlet extends HttpServlet {
         String log;
         String userName;
 
-        if (user.getName() == null) {
+        if (user==null || user.getName() == null) {
             idServlet = "auth";
             log = "signIn";
             userName = "";
@@ -210,9 +210,9 @@ public class cardServlet extends HttpServlet {
                 "        </div>" +
                 "        <div id=\"languages\">\n" +
                 "            <ul class=\"language-ul\" id=\"language-panel\">\n" +
-                "                <li class=\"small-pic\"><a href=\"w?id="+ id +"&lang=ru\" ><img id=\"rus\" src=\"./img/rus.png\" alt=\"Russian\"></a></li>\n" +
-                "                <li class=\"small-pic\"><a href=\"w?id="+ id +"&lang=en\" ><img id=\"eng\" src=\"./img/eng.png\" alt=\"English\"></a></li>\n" +
-                "                <li class=\"small-pic\"><a href=\"w?id="+ id +"&lang=de\" ><img id=\"de\" src=\"./img/de.png\" alt=\"Deutsch\"></a></li>\n" +
+                "                <li class=\"small-pic\"><a href=\"w?id="+ id +"&lang=ru_RU\" ><img id=\"rus\" src=\"./img/rus.png\" alt=\"Russian\"></a></li>\n" +
+                "                <li class=\"small-pic\"><a href=\"w?id="+ id +"&lang=en_GB\" ><img id=\"eng\" src=\"./img/eng.png\" alt=\"English\"></a></li>\n" +
+                "                <li class=\"small-pic\"><a href=\"w?id="+ id +"&lang=de_DE\" ><img id=\"de\" src=\"./img/de.png\" alt=\"Deutsch\"></a></li>\n" +
                 "            </ul>\n" +
                 "        </div>\n" +
                 "    </header>\n" +
@@ -260,7 +260,7 @@ public class cardServlet extends HttpServlet {
                 "                <div id=\"price\"><img src=\"./img/rouble.png\" alt=\"Rouble\"><p>"+ price + " "+ currency +"</p></div>\n" +
                 "                <div id=\"owner\"><img src=\"./img/owner.png\" alt=\"Owner\"><p>"+ owner +"</p></div>\n" +
 //                "                <div id=\"buy-button\"><button class=\"buy\" name=\"buy-car\" type=\"submit\" value=\"carId\">"+ buyButton +"</button></div>\n" +
-                        "<form action=\"/sb\" method=\"post\">\n" +
+                        "<form action=\"/sb?lang="+lang+"\" method=\"post\">\n" +
                         "    <input type=\"image\" src=\"../img/buy.png\" width=\"auto\" height=\"64\" id=\"buy-button\" name=\"idServlet\" value=\""+id+"\">\n" +
                         "</form>" +
                 "            </div>\n" +

@@ -116,7 +116,7 @@
     <div class="basket-ads">
         <c:forEach var="product" items="${m:getSBList()}" >
             <div class="each-ad-div">
-                <h4>${m: getAd(product.key).title}</h4>
+                    <a href="/w?id=${m: getAd(product.key).id}"><h4>${m: getAd(product.key).title}</h4></a>
                 <p id="price">${m: getAd(product.key).price} <fmt:message key="currency"/></p>
                 <div class="selectors">
                     <form action="/sb?lang=${lang}" method="post">
@@ -127,7 +127,7 @@
                         <input name="idP" type="image" src="../img/plus.png" width="16" height="16" value="${product.key}">
                     </form>
                 </div>
-                <img src="../img/${m: getAd(product.key).foto1}" width="200px" height="150px">
+                <a href="/w?id=${m: getAd(product.key).id}"><img src="../img/${m: getAd(product.key).foto1}" width="200px" height="150px"></a>
                 <p class="some-desc-to-each"><fmt:message key="yearIss"/> ${m: getAd(product.key).year}</p>
                 <hr>
             </div>
