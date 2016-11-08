@@ -8,7 +8,7 @@
     top: -10px;
     width: 350px;
     height: 30px;
-    margin: 5px 5px 5px 30px;
+    margin: 5px 5px 5px 5px;
     display: inline-block;
     padding: 5px;
 }
@@ -107,7 +107,7 @@ header {
     position: relative;
     display: inline-block;
     top: 8px;
-    margin: 0 10px 10px 30px;
+    margin: 0 10px 10px 10px;
     text-align: center;
 }
 
@@ -355,12 +355,18 @@ header {
     font-size: medium;
 }
 
-#buy-button,#owner,#price,#car-title {
+#owner,#price,#car-title {
     position: relative;
     width: 300px;
     height: 70px;
     display: inline-block;
     /*border: 1px solid red;*/
+}
+#buy-button {
+    position: relative;
+    width: auto;
+    height: 70px;
+    display: inline-block;
 }
 
 #price p {
@@ -380,7 +386,7 @@ header {
 
 .buy {
     margin-top: 5px;
-    width: 290px;
+    width: auto;
     height: 60px;
     cursor: pointer;
     font-weight: bold;
@@ -442,13 +448,45 @@ header {
 
 .service-buttons {
     position: relative;
-    left:0;
+    left: 20px;
     top: -10px;
-    width: 300px;
+    width: 352px;
     height: 30px;
-    margin: 5px 5px 5px 10px;
+    margin: 5px 5px 5px 0;
     display: inline-block;
     padding: 2px;
+}
+
+/*.service-buttons a.hat-button {*/
+    /*width: 80px;*/
+    /*height: 25px;*/
+    /*padding: 0;*/
+    /*display: inline-block;*/
+    /*text-decoration: none;*/
+    /*text-align: center;*/
+/*}*/
+/*.service-buttons a {*/
+    /*width: auto;*/
+    /*height: 35px;*/
+    /*padding: 0;*/
+    /*display: inline-block;*/
+    /*text-decoration: none;*/
+    /*text-align: center;*/
+/*}*/
+
+/*.service-buttons a img {*/
+    /*width: auto;*/
+    /*height: 35px;*/
+/*}*/
+
+#productsInBasket{
+    position: relative;
+    top: -10px;
+    width: 50px;
+    height: auto;
+    /* margin: 5px 5px 5px 30px; */
+    display: inline-block;
+    padding: 5px;
 }
 
 .hat-form {
@@ -684,4 +722,83 @@ option {
 .model-info-ul {
     color: darkred;
     list-style-type: square;
+}
+
+.a-sb {
+    margin-right: 1px;
+    width: 50px;
+    position: relative;
+    float: left;
+    font-size: 20px;
+    top: 20px;
+    text-decoration: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+.a-sb :hover {
+    background-color: darkred;
+}
+
+
+
+.service-buttons a.hat-button {
+    width: 80px;
+    height: 25px;
+    padding: 0;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+.service-buttons a {
+    width: auto;
+    height: 35px;
+    padding: 0;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+
+.service-buttons a img {
+    width: auto;
+    height: 35px;
+}
+
+#account-label {
+    margin: 60px;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    color: darkred;
+}
+
+.userPhoto {
+    position: relative;
+    display: inline-block;
+    margin: 20px 10px 0 30px;
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+}
+
+.userPhoto img {
+    width: 200px;
+    height: 200px;
+}
+
+.userInfo {
+    top: -70px;
+    padding: 10px;
+    margin: 20px 0 0 10px;
+    position: relative;
+    display: inline-block;
+    border: 3px double darkred;
+}
+
+.userInfo h2 {
+    text-align: left;
+    font-weight: bold;
+    color: red;
 }

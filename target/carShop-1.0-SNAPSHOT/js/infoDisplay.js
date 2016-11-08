@@ -29,3 +29,6 @@ function setCarType() {
     window.location='?carType=' + value;
 }
 
+function addCookie(l) {
+    document.cookie="lang="+l;
+}

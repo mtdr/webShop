@@ -1,0 +1,28 @@
+#logo {
+    display: inline-block;
+    margin: 8px 0px 0px 7px;
+    float:left;
+    height: 50px;
+
+    -webkit-transition: transform 5s;
+    -moz-transition: transform 5s ;
+    -ms-transition: transform 5s ;
+    -o-transition: transform 5s ;
+    transition: transform 5s ;
+
+}
+
+#logo:hover {
+    transform: rotate(45deg);
+}
+
+#logo img {
+    width: 35px;
+    height: 65%;
+}
+
+p{
+    display: inline-block;
+    margin: 50px;
+
+}

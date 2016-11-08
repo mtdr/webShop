@@ -12,13 +12,57 @@
             <param-value>1</param-value>
         </init-param>
     </servlet>
+    <servlet>
+        <servlet-name>authServlet</servlet-name>
+        <servlet-class>com.servlets.authServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>logOutServlet</servlet-name>
+        <servlet-class>com.servlets.logOutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>basketServlet</servlet-name>
+        <servlet-class>com.servlets.shopBasketServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>cardServlet</servlet-name>
         <url-pattern>/w</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>authServlet</servlet-name>
+        <url-pattern>/auth</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>logOutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>basketServlet</servlet-name>
+        <url-pattern>/sb</url-pattern>
+    </servlet-mapping>
 
     <welcome-file-list>
         <welcome-file>/jsp/list.jsp</welcome-file>
     </welcome-file-list>
+
+    <security-constraint>
+        <web-resource-collection>
+            <url-pattern>/auth</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>user</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-role>
+        <role-name>user</role-name>
+    </security-role>
+
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/jsp/auth.jsp</form-login-page>
+            <form-error-page>/jsp/auth-error.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
 </web-app>

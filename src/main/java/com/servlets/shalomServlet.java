@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/**Создание первого сервлета
+/**РЎРѕР·РґР°РЅРёРµ РїРµСЂРІРѕРіРѕ СЃРµСЂРІР»РµС‚Р°
  *
  */
 @WebServlet(name = "ShalomServlet", urlPatterns = {"/a/b/c", "/servlets/shalom", "/sh"})

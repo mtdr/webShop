@@ -1,7 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.io.*, java.util.*" %>
-<%@ page import="com.beanCar.AdList" %>
-<%@ page import="com.beanCar.Ad" %>
+<%@ page import="com.beans.beanCar.AdList" %>
+<%@ page import="com.beans.beanCar.Ad" %>
+<%@ taglib prefix="m" uri="/WEB-INF/tld/tag1.tld" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,39 +14,48 @@
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
         String lang = request.getParameter("lang");
+        String carType = request.getParameter("carType");
+
+        Cookie[] cookies = request.getCookies();
+        if(lang == null) {
+            for (int i = 0; i < cookies.length; i++) {
+                if ("lang".equals(cookies[i].getName())) {
+                    lang = cookies[i].getValue();
+                }
+            }
+        }
         Locale locale;
-        if("en".equals(lang)) {
+        if ("en_GB".equals(lang)) {
             locale = new Locale("en", "GB");
-        } else if ("ru".equals(lang)) {
+        } else if ("ru_RU".equals(lang)) {
             locale = Locale.getDefault();
-        } else if ("de".equals(lang)) {
-            locale=new Locale("de", "DE");
+        } else if ("de_DE".equals(lang)) {
+            locale = new Locale("de", "DE");
         } else {
             locale = Locale.getDefault();
         }
         Cookie cookie1 = new Cookie("lang", lang);
-
-        // cookie expire
-        int expiry = 15;
-
         response.addCookie(cookie1);
-        String carType = request.getParameter("carType");
-        Cookie[] cookies = request.getCookies();
+        // cookie expire
+        int expiry = 120;
+
+
         ResourceBundle res = ResourceBundle.getBundle("shop", locale);
+
         AdList.deleteList();
-        AdList.addElem(new Ad("sedan", "Audi A8","500.000","Peter","2012",
+        AdList.addElem(new Ad("sedan", "Audi A8",500000,"Peter","2012",
                 "120.000","White","Dsg","petrol","400","3.5","left side","2","original",
                 "car1/1.jpg","car1/2.jpg","car1/3.jpg","car1/4.jpg"));
-        AdList.addElem(new Ad("sedan", "BMW M5","700.000","Andrew","2010",
+        AdList.addElem(new Ad("sedan", "BMW M5",700000,"Andrew","2010",
                 "110.000","White","auto","petrol","600","4.5","left side","1","original",
                 "car2/1.jpg","car2/2.jpg","car2/3.jpg","car2/4.jpg"));
-        AdList.addElem(new Ad("suv", "Audi Q3","300.000","Max","2012",
+        AdList.addElem(new Ad("suv", "Audi Q3",300000,"Max","2012",
                 "12.000","White","Dsg","petrol","150","2.5","left side","1","original",
                 "car3/1.jpg","car3/2.jpg","car3/3.jpg","car3/4.jpg"));
-        AdList.addElem(new Ad("suv", "BMW X3","450.000","Толик","2012",
+        AdList.addElem(new Ad("suv", "BMW X3",450000,"Толик","2012",
                 "120.000","Белый","Автомат","АИ-98","400","5.5","Левый","2","Оригинал",
                 "car4/1.jpg","car4/2.jpg","car4/3.jpg","car4/4.jpg"));
-        AdList.addElem(new Ad("coupe", "Toyota Mark","100.000","Jo Hi Man","1996",
+        AdList.addElem(new Ad("coupe", "Toyota Mark",100000,"Jo Hi Man","1996",
                 "700.000","White","Dsg","petrol","270","3.5","right side","2","original",
                 "car5/1.jpg","car5/2.jpg","car5/3.jpg","car5/4.jpg"));
 
@@ -66,7 +77,9 @@
         ArrayList<Ad> adList1 = AdList.getAdList();
     %>
     <title><%=res.getString("pageTitle")%></title>
-    <jsp:useBean id="adId" class="com.beanCar.Ad" scope="page"/>
+    <jsp:useBean id="adId" class="com.beans.beanCar.Ad" scope="page"/>
+    <jsp:useBean id="basket" class="com.beans.beanShopBasket.SBList" scope="session" />
+
 
 </head>
 <body>

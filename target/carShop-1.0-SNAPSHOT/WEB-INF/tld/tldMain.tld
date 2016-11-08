@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1">
+
+    <tlib-version>1.0</tlib-version>
+    <short-name>m</short-name>
+    <uri>/WEB-INF/tld/tag1.tld</uri>
+    <function>
+        <name>getAd</name>
+        <function-class>com.beans.beanCar.AdList</function-class>
+        <function-signature>com.beans.beanCar.Ad getAd(int)</function-signature>
+    </function>
+
+    <function>
+        <name>getSBList</name>
+        <function-class>com.beans.beanShopBasket.SBList</function-class>
+        <function-signature>java.util.LinkedHashMap getSBList()</function-signature>
+    </function>
+    <function>
+        <name>getSize</name>
+        <function-class>com.beans.beanShopBasket.SBList</function-class>
+        <function-signature>int getSize()</function-signature>
+    </function>
+    <function>
+        <name>getSum</name>
+        <function-class>com.beans.beanShopBasket.SBList</function-class>
+        <function-signature>int getSum()</function-signature>
+    </function>
+
+
+    <!-- Invoke 'Generate' action to add tags or functions -->
+
+</taglib>
