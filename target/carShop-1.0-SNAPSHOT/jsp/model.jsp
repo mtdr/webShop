@@ -18,8 +18,10 @@
     </div>
     <div class="model-buy-div">
         <p id="model-price"><jsp:getProperty name="adId" property="price"/> <%=res.getString("currency")%></p>
-        <form action="/sb?lang=<%=lang%>" method="POST">
-                <input name="id" type="image" src="../img/buy.png" class="buy" value ="<jsp:getProperty name="adId" property="id"/>">
+        <form action="/sb?lang=<%=lang%>&id=<jsp:getProperty name="adId" property="id"/>" method="POST">
+            <input type="submit" class="new-buy-button" value="<%=res.getString("buyButton")%>">
+
+        <%--<input name="id" type="image" src="../img/buy.png" class="buy" value ="<jsp:getProperty name="adId" property="id"/>">--%>
         </form>
         <%--<div id="model-buy-button"><button class="model-buy" name="buy-car" type="submit" value="carId"><a href="/w?id=<jsp:getProperty name="adId" property="id"/>">Купить</a></button></div>--%>
     </div>

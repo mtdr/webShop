@@ -384,6 +384,32 @@ header {
     font-size: large;
 }
 
+.new-buy-button{
+    margin-top: 5px;
+    width: 150px;
+    height: 60px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: large;
+    background-color: green;
+    text-align: center;
+    color: orangered;
+    border-radius: 10px;
+
+}
+
+.new-buy-button:hover {
+    color: darkred;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #448c20), color-stop(1, #5ef513));
+    background:-webkit-linear-gradient(top, #448c20 5%, #5ef513 100%);
+    background-color:#448c20;
+}
+.new-buy-button:active {
+    position:relative;
+    top:1px;
+}
+
+
 .buy {
     margin-top: 5px;
     width: auto;
