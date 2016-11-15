@@ -35,27 +35,18 @@
     </div>
     <div class="service-buttons">
         <c:if test="${user.auth==null}">
-            <%--<form action="/auth?page=list&lang=<%=lang%>" method="get" class="hat-form">--%>
-                <%--<button type="submit" class="hat-button"><%=res.getString("signIn")%></button>--%>
-            <%--</form>--%>
             <a href="/auth?page=list&lang=<%=lang%>" class="hat-button"><%=res.getString("signIn")%></a>
         </c:if>
         <c:if test="${user.auth=='1'}">
             <a href="/w?page=account&lang=<%=lang%>" class="hat-button">${user.name}</a>
-            <%--<form action="/logout?page=list&lang=<%=lang%>" method="get" class="hat-form">--%>
-                <%--<button type="submit" class="hat-button"><%=res.getString("logOut")%></button>--%>
-            <%--</form>--%>
-
             <a href="/logout?page=list" class="hat-button"><%=res.getString("logOut")%></a>
         </c:if>
-        <%--<a href="?lang=<%=request.getParameter("lang")%>"></a>--%>
 
-        <form action="#" class="hat-form">
-            <button type="submit" name="history-button" class="hat-button" onclick="alert('history')"><%=res.getString("history")%></button>
-        </form>
-        <%--<form action="/jsp/basket.jsp?lang=<%=lang%>" class="hat-form-box">--%>
-            <%--<button type="submit" name="box-button" onclick="alert('Корзина')"><img src="../img/shoppingbag.png" alt="bag"></button>--%>
-        <%--</form>--%>
+        <a href="/auth?page=history&lang=<%=lang%>" class="hat-button"><%=res.getString("history")%></a>
+        <c:if test="${m:getSize()>0}">
+            <a href="/auth?page=order&lang=<%=lang%>" class="hat-button"><%=res.getString("checkout")%></a>
+        </c:if>
+
         <a href="/jsp/sb.jsp?lang=<%=lang%>"> <img src="../img/shoppingbag.png"></a>
 
         <p id="productsInBasket"> ${m:getSize()}</p>

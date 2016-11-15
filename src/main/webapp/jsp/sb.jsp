@@ -67,34 +67,17 @@
         </div>
         <div class="service-buttons">
             <c:if test="${user.auth==null}">
-                <%--<form action="/auth?page=list&lang=${lang}" method="get" class="hat-form">--%>
-                    <%--<button type="submit" class="hat-button"><fmt:message key="signIn" /></button>--%>
-                <%--</form>--%>
                 <a href="/auth?page=list&lang=${lang}" class="hat-button"><fmt:message key="signIn" /></a>
             </c:if>
             <c:if test="${user.auth=='1'}">
                 <a href="/w?page=account&lang=${lang}" class="hat-button">${user.name}</a>
                 <a href="/logout?page=sb" class="hat-button"><fmt:message key="logOut" /></a>
-
-                <%--<form action="/logout?page=list&lang=${lang}" method="get" class="hat-form">--%>
-                    <%--<button type="submit" class="hat-button"><fmt:message key="logOut" /></button>--%>
-                <%--</form>--%>
-
-                <%--<a href="/logout?page=list" class="button1"><%=res.getString("logout")%></a>--%>
             </c:if>
-            <%--<a href="?lang=<%=request.getParameter("lang")%>"></a>--%>
 
-            <%--<form action="#" class="hat-form">--%>
-                <%--<button type="submit" name="history-button" class="hat-button" onclick="alert('history')"><fmt:message key="history" /></button>--%>
-            <%--</form>--%>
-            <%--<form action="/jsp/sb.jsp?lang=${lang}" class="hat-form-box">--%>
-                <%--<button type="submit" name="box-button" onclick="alert('Корзина')"><img src="../img/shoppingbag.png" alt="bag"></button>--%>
-            <%--</form>--%>
-
-
-            <form action="" class="hat-form">
-                <button type="submit" name="history-button" class="hat-button" onclick="alert('history')"><fmt:message key="history" /></button>
-            </form>
+            <a href="/auth?page=history&lang=${lang}" class="hat-button"><fmt:message key="history"/> </a>
+            <c:if test="${m:getSize()>0}">
+                <a href="/auth?page=order&lang=${lang}" class="hat-button"><fmt:message key="checkout"/></a>
+            </c:if>
             <a href="/jsp/sb.jsp?lang=${lang}"> <img src="../img/shoppingbag.png"></a>
             <p id="productsInBasket"> ${m:getSize()}</p>
 
@@ -138,7 +121,9 @@
         <h4><fmt:message key="numOfOrder"/>:</h4>
         <h4 id="countOrder">${m:getSize()}</h4>
         <h4 id="sum"><fmt:message key="orderSum"/>: ${m:getSum()} <fmt:message key="currency"/></h4>
-        <a href="/auth?page=order&lang=${lang}"><input type="button" id="checkout-button" value="<fmt:message key="checkout"/>"></a>
+        <c:if test="${m:getSize()>0}">
+            <a href="/auth?page=order&lang=${lang}"><input type="button" id="checkout-button" value="<fmt:message key="checkout"/>"></a>
+        </c:if>
     </div>
 </div>
 </body>

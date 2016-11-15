@@ -2,11 +2,16 @@
 <%@ page import="java.io.*, java.util.*" %>
 <%@ page import="com.beans.beanCar.AdList" %>
 <%@ page import="com.beans.beanCar.Ad" %>
+<%@ page import="org.hibernate.Transaction" %>
+<%@ page import="com.dao.HibernateSessionFactory" %>
+<%@ page import="org.hibernate.Session" %>
+<%@ page import="com.entity.AdsEntity" %>
 <%@ taglib prefix="m" uri="/WEB-INF/tld/tag1.tld" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="../css/styles1.css">
     <script src="../js/infoDisplay.js"></script>
 
@@ -43,21 +48,21 @@
         ResourceBundle res = ResourceBundle.getBundle("shop", locale);
 
         AdList.deleteList();
-        AdList.addElem(new Ad("sedan", "Audi A8",500000,"Peter","2012",
-                "120.000","White","Dsg","petrol","400","3.5","left side","2","original",
-                "car1/1.jpg","car1/2.jpg","car1/3.jpg","car1/4.jpg"));
-        AdList.addElem(new Ad("sedan", "BMW M5",700000,"Andrew","2010",
-                "110.000","White","auto","petrol","600","4.5","left side","1","original",
-                "car2/1.jpg","car2/2.jpg","car2/3.jpg","car2/4.jpg"));
-        AdList.addElem(new Ad("suv", "Audi Q3",300000,"Max","2012",
-                "12.000","White","Dsg","petrol","150","2.5","left side","1","original",
-                "car3/1.jpg","car3/2.jpg","car3/3.jpg","car3/4.jpg"));
-        AdList.addElem(new Ad("suv", "BMW X3",450000,"Толик","2012",
-                "120.000","Белый","Автомат","АИ-98","400","5.5","Левый","2","Оригинал",
-                "car4/1.jpg","car4/2.jpg","car4/3.jpg","car4/4.jpg"));
-        AdList.addElem(new Ad("coupe", "Toyota Mark",100000,"Jo Hi Man","1996",
-                "700.000","White","Dsg","petrol","270","3.5","right side","2","original",
-                "car5/1.jpg","car5/2.jpg","car5/3.jpg","car5/4.jpg"));
+//        AdList.addElem(new Ad("sedan", "Audi A8",500000,"Peter","2012",
+//                "120.000","White","Dsg","petrol","400","3.5","left side","2","original",
+//                "car1/1.jpg","car1/2.jpg","car1/3.jpg","car1/4.jpg"));
+//        AdList.addElem(new Ad("sedan", "BMW M5",700000,"Andrew","2010",
+//                "110.000","White","auto","petrol","600","4.5","left side","1","original",
+//                "car2/1.jpg","car2/2.jpg","car2/3.jpg","car2/4.jpg"));
+//        AdList.addElem(new Ad("suv", "Audi Q3",300000,"Max","2012",
+//                "12.000","White","Dsg","petrol","150","2.5","left side","1","original",
+//                "car3/1.jpg","car3/2.jpg","car3/3.jpg","car3/4.jpg"));
+//        AdList.addElem(new Ad("suv", "BMW X3",450000,"Толик","2012",
+//                "120.000","Белый","Автомат","АИ-98","400","5.5","Левый","2","Оригинал",
+//                "car4/1.jpg","car4/2.jpg","car4/3.jpg","car4/4.jpg"));
+//        AdList.addElem(new Ad("coupe", "Toyota Mark",100000,"Jo Hi Man","1996",
+//                "700.000","White","Dsg","petrol","270","3.5","right side","2","original",
+//                "car5/1.jpg","car5/2.jpg","car5/3.jpg","car5/4.jpg"));
 
 //        AdList.addElem(new Ad("sedan", "1_title","1_price","1_owner","1_year",
 //                "1_mileage","1_colour","1_transmission","1_fuel","1_power","1_v","1_wheel","1_nos","1_pts",
@@ -74,6 +79,19 @@
 //        AdList.addElem(new Ad("coupe", "5_title","5_price","5_owner","5_year",
 //                "5_mileage","5_colour","1_transmission","1_fuel","5_power","5_v","1_wheel","1_nos","1_pts",
 //                "car5/1.jpg","car5/2.jpg","car5/3.jpg","car5/4.jpg"));
+        Session Hsession = HibernateSessionFactory.getSessionFactory().openSession();
+        Transaction tx = Hsession.beginTransaction();
+        List list = Hsession.createQuery("FROM AdsEntity").list();
+        for (Iterator iterator = list.iterator(); iterator.hasNext();) {
+            AdsEntity cur = (AdsEntity) iterator.next();
+            AdList.addElem(new Ad(cur.getCarType(),cur.getTitle(),cur.getPrice(),cur.getOwner(),cur.getYear(),
+                    cur.getMileage(), cur.getColour(),cur.getTransmission(),cur.getEngineFuel(),cur.getEnginePower(),
+                    cur.getEngineV(), cur.getWheel(),cur.getNumOfOwners(),cur.getPts(),cur.getFoto1(),cur.getFoto2(),
+                    cur.getFoto3(), cur.getFoto4()));
+        }
+        tx.commit();
+        Hsession.close();
+
         ArrayList<Ad> adList1 = AdList.getAdList();
     %>
     <title><%=res.getString("pageTitle")%></title>
