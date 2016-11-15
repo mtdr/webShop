@@ -87,22 +87,22 @@
     </header>
     <h2 id="history"><fmt:message key="history"/></h2>
     <div class="history">
-        <c:forEach var="order1" items="${sessionScope.orders}">
-            <div class="historyOffice">
-                <ul>
-                    <li id="historyLi1">
+
+        <div class="historyOffice">
+            <ul>
+                <c:forEach var="order1" items="${sessionScope.orders}">
+                    <li id="history-each">
                         <p><fmt:message key="yourOrder"/>: ${order1.car}</p>
-                        <p><fmt:message key="address"/>: ${order1.delivery}</p>
-                    </li>
-                    <li id="historyLi2">
                         <p><fmt:message key="count"/>: ${order1.count}</p>
                         <p><fmt:message key="date"/>: ${order1.date}</p>
+                        <p><fmt:message key="address"/>: ${order1.delivery}</p>
                     </li>
-                </ul>
-                <hr>
-            </div>
-        </c:forEach>
+                    <hr>
+                </c:forEach>
+            </ul>
+        </div>
+
     </div>
-    </div>
+</div>
 </body>
 </html>

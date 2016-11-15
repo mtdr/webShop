@@ -38,7 +38,7 @@
 
 </head>
 <body onload="loadXMLDoc()">
-<div class="bodyOffice">
+<div class="bodyAccount">
     <header id="header">
         <div id="logo"><a href="/?lang=${lang}"><img src="../img/car.png" alt="Logo"></a></div>
         <div id="nav-div">
@@ -93,7 +93,9 @@
         <textarea id="comment" name="comment" rows="10" cols="45"></textarea><br>
         <input class="button-send-comment" type="submit" value="<fmt:message key="send-comment"/>" onclick="loadXMLDoc()">
     </div>
-    <div id="RESULT"></div>
+    <div id="list-of-comments">
+        <%--comments--%>
+    </div>
 
 </div>
 

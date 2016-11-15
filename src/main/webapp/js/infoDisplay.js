@@ -66,7 +66,7 @@ function initialize(coordX, coordY, address, shop, id) {
     }
 }
 function mark(coordX, coordY, address, shop, map, id) {
-    var contentString = '<div id="content">' + address + '</div>';
+    var contentString = '<div id="content"><p>' + shop + '</p><br><p>' + address + '</p></div>';ads
     var infowindow = new google.maps.InfoWindow({
         content: contentString
     });
@@ -98,7 +98,7 @@ function loadXMLDoc() {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-            document.getElementById("RESULT").innerHTML = xmlhttp.responseText;
+            document.getElementById("list-of-comments").innerHTML = xmlhttp.responseText;
     };
     xmlhttp.open("GET", "/comments?comment=" + elem, true);
     xmlhttp.send();
@@ -107,7 +107,7 @@ function myTimer(lang) {
     var now = new Date();
     var now1;
     var options = {
-        era: 'long',
+        // era: 'long',
         year: 'numeric',
         month: 'numeric',
         day: 'numeric',
@@ -124,7 +124,7 @@ function myTimer(lang) {
         case 'en_GB':
             now1 = new Intl.DateTimeFormat("en-GB", options);
             break;
-        case 'be_BY':
+        case 'de_DE':
             now1 = new Intl.DateTimeFormat("de-DE", options);
             break;
         default:

@@ -214,7 +214,7 @@ public class cardServlet extends HttpServlet {
                 "            </ul>\n" +
                 "        </div>\n" +
                 "    </header>\n" +
-                "    <div id=\"content\">\n" +
+                "    <div id=\"content-card\">\n" +
                 "        <div id=\"photo-div\">\n" +
                 "            <p id=\"large-text\">"+ fotoTitle +"</p>\n" +
                 "            <div class=\"dropdown-photo\">\n" +
