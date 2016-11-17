@@ -154,6 +154,11 @@ public class cardServlet extends HttpServlet {
         String signIn = rb.getString("signIn");
         String history = rb.getString("history");
 
+        String displayOrder ="";
+        if(SBList.getSize() > 0) {
+            displayOrder="<a href="+"/auth?page=order&lang="+lang+"\" class=\"hat-button\">"+rb.getString("checkout")+"</a>";
+        }
+
         int firstPar;
         firstPar = Integer.parseInt(first);
         out.println("<%--\n" +
@@ -193,17 +198,10 @@ public class cardServlet extends HttpServlet {
                 "        </div>\n" +
                 "<div class=\"service-buttons\">\n" +
                 "\n" +
-                "                   <a href=\"w?page=account&lang="+lang+"\" class=\"hat-button\">" + userName + "</a>\n" +
-                        "<a href=\"/"+idServlet+"?page=w&id="+id+"&lang="+lang+"\" class=\"hat-button\">"+rb.getString(log)+"</a>\n"+
-//                "            <form action=\"/" + idServlet + "?page=w&id=" + id + "&lang="+lang+"\" class=\"hat-form\">\n" +
-//                "                <button type=\"submit\" name=\"signin-button\" class=\"hat-button\">"+ signIn +"</button>\n" +
-//                "            </form>\n" +
-                "            <form action=\"#\" class=\"hat-form\">\n" +
-                "                <button type=\"submit\" name=\"history-button\" class=\"hat-button\">"+ history +"</button>\n" +
-                "            </form>\n" +
-//                "            <form action=\"/jsp/sb.jsp\" class=\"hat-form-box\">\n" +
-//                "                <button type=\"submit\" name=\"box-button\" onclick=\"alert('Корзина')\"><img src=\"./img/shoppingbag.png\" alt=\"bag\"></button>\n" +
-//                "            </form>\n" +
+                "               <a href=\"w?page=account&lang="+lang+"\" class=\"hat-button\">" + userName + "</a>\n" +
+                "               <a href=\"/"+idServlet+"?page=w&id="+id+"&lang="+lang+"\" class=\"hat-button\">"+rb.getString(log)+"</a>\n"+
+                "                   <a href=\"/auth?page=history&lang="+lang+"\" class=\"hat-button\">" + rb.getString("history") + "</a>\n" +
+                "                   "+ displayOrder +"\n"+
                 "                   <a href=\"/jsp/sb.jsp\" ><img src=\"../../../../img/shoppingbag.png\"></a>\n" +
                 "                   <p id=\"productsInBasket\">" + SBList.getSize() + "</p>\n" +
                 "\n" +
@@ -216,7 +214,7 @@ public class cardServlet extends HttpServlet {
                 "            </ul>\n" +
                 "        </div>\n" +
                 "    </header>\n" +
-                "    <div id=\"content\">\n" +
+                "    <div id=\"content-card\">\n" +
                 "        <div id=\"photo-div\">\n" +
                 "            <p id=\"large-text\">"+ fotoTitle +"</p>\n" +
                 "            <div class=\"dropdown-photo\">\n" +

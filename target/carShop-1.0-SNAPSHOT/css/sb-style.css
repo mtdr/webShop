@@ -104,8 +104,10 @@ header {
 }
 
 #nav-div {
+    display: none;
     position: relative;
-    display: inline-block;
+    /*display: inline-block;*/
+
     top: 8px;
     margin: 0 10px 10px 10px;
     text-align: center;
@@ -271,7 +273,7 @@ header {
     position: relative;
     left: 20px;
     top: -10px;
-    width: 352px;
+    width: 600px;
     height: 30px;
     margin: 5px 5px 5px 0;
     display: inline-block;
@@ -562,15 +564,11 @@ header {
     cursor: pointer;
 }
 
-#checkout-button, #clearBasketButton:hover {
+#checkout-button:hover, #clearBasketButton:hover {
     background-color: darkred;
 }
 
-#checkout-button, #clearBasketButton:active {
-    background-color: red;
-}
-
-#checkout-button, #clearBasketButton:focus {
+#checkout-button:focus, #clearBasketButton:focus {
     outline: none;
 }
 

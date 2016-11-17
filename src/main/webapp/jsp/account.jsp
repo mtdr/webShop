@@ -11,7 +11,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <c:if test="${empty pageContext.request.parameterMap.lang[0]}">
         <c:set var="lang" value="ru_RU"/>
     </c:if>
@@ -29,15 +29,15 @@
     </c:if>
     <fmt:setBundle basename="shop"/>
     <title><fmt:message key="accountLabel"/></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/styles1.css">
     <script src="../js/infoDisplay.js"></script>
+    <script>setInterval(function(){myTimer('${lang}')},1000);</script>
     <jsp:useBean id="user" class="com.beans.beanUser.User" scope="session" />
     <jsp:useBean id="basket" class="com.beans.beanShopBasket.SBList" scope="session" />
 
 </head>
-<body>
-<div class="bodyOffice">
+<body onload="loadXMLDoc()">
+<div class="bodyAccount">
     <header id="header">
         <div id="logo"><a href="/?lang=${lang}"><img src="../img/car.png" alt="Logo"></a></div>
         <div id="nav-div">
@@ -58,35 +58,12 @@
             <button class="search-button"><a href="/"><img src="../img/search.png" alt="search"></a></button> </form>
         </div>
         <div class="service-buttons">
-            <c:if test="${user.auth==null}">
-                <%--<form action="/auth?page=list&lang=${lang}" method="get" class="hat-form">--%>
-                <%--<button type="submit" class="hat-button"><fmt:message key="signIn" /></button>--%>
-                <%--</form>--%>
-                <a href="/auth?page=list&lang=${lang}" class="hat-button"><fmt:message key="signIn" /></a>
+            <a href="/w?page=account&lang=${lang}" class="hat-button">${user.name}</a>
+            <a href="/logout?page=sb" class="hat-button"><fmt:message key="logOut" /></a>
+            <a href="/auth?page=history&lang=${lang}" class="hat-button"><fmt:message key="history" /></a>
+            <c:if test="${m:getSize()>0}">
+                <a href="/s2?page=order&lang=${lang}" class="hat-button"><fmt:message key="checkout"/></a>
             </c:if>
-            <c:if test="${user.auth=='1'}">
-                <a href="/w?page=account&lang=${lang}" class="hat-button">${user.name}</a>
-                <a href="/logout?page=sb" class="hat-button"><fmt:message key="logOut" /></a>
-
-                <%--<form action="/logout?page=list&lang=${lang}" method="get" class="hat-form">--%>
-                <%--<button type="submit" class="hat-button"><fmt:message key="logOut" /></button>--%>
-                <%--</form>--%>
-
-                <%--<a href="/logout?page=list" class="button1"><%=res.getString("logout")%></a>--%>
-            </c:if>
-            <%--<a href="?lang=<%=request.getParameter("lang")%>"></a>--%>
-
-            <%--<form action="#" class="hat-form">--%>
-            <%--<button type="submit" name="history-button" class="hat-button" onclick="alert('history')"><fmt:message key="history" /></button>--%>
-            <%--</form>--%>
-            <%--<form action="/jsp/sb.jsp?lang=${lang}" class="hat-form-box">--%>
-            <%--<button type="submit" name="box-button" onclick="alert('Корзина')"><img src="../img/shoppingbag.png" alt="bag"></button>--%>
-            <%--</form>--%>
-
-
-            <%--<form class="hat-form">--%>
-                <button type="submit" name="history-button" class="hat-button" onclick="alert('history')"><fmt:message key="history" /></button>
-            <%--</form>--%>
             <a href="/jsp/sb.jsp?lang=${lang}"> <img src="../img/shoppingbag.png"></a>
             <p id="productsInBasket"> ${m:getSize()}</p>
 
@@ -106,8 +83,23 @@
     </div>
     <div class="userInfo">
         <h2><fmt:message key="userNameLabel"/>: ${user.name}</h2>
+        <h2 id="current-time"></h2>
         <h2><fmt:message key="defaultPage" />: ${pageContext.request.parameterMap.accT[0]}</h2>
+        <a id="viewHistory" href="/auth?page=history&lang=${lang}" ><fmt:message key="viewHistory"/></a>
     </div>
+    <div class="user-comment">
+        <h2><fmt:message key="user-comment"/></h2>
+        <textarea id="comment" name="comment" rows="10" cols="45"></textarea>
+        <br>
+        <input class="button-send-comment" type="submit" value="<fmt:message key="send-comment"/>" onclick="loadXMLDoc()">
+    </div>
+    <div id="list-of-comments">
+        <%--comments--%>
+    </div>
+
 </div>
+
 </body>
+<%--</div>--%>
+<%--</body>--%>
 </html>
