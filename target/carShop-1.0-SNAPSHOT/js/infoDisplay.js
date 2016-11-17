@@ -92,6 +92,7 @@ function mark(coordX, coordY, address, shop, map, id) {
 function loadXMLDoc() {
     var xmlhttp;
     var elem = document.getElementById('comment').value;
+
     if (window.XMLHttpRequest)
         xmlhttp = new XMLHttpRequest();
     else

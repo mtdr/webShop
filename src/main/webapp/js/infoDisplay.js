@@ -66,7 +66,7 @@ function initialize(coordX, coordY, address, shop, id) {
     }
 }
 function mark(coordX, coordY, address, shop, map, id) {
-    var contentString = '<div id="content"><p>' + shop + '</p><br><p>' + address + '</p></div>';ads
+    var contentString = '<div id="content"><p>' + shop + '</p><br><p>' + address + '</p></div>';
     var infowindow = new google.maps.InfoWindow({
         content: contentString
     });
@@ -92,6 +92,7 @@ function mark(coordX, coordY, address, shop, map, id) {
 function loadXMLDoc() {
     var xmlhttp;
     var elem = document.getElementById('comment').value;
+
     if (window.XMLHttpRequest)
         xmlhttp = new XMLHttpRequest();
     else

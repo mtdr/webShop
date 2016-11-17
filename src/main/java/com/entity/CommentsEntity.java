@@ -8,7 +8,7 @@ import java.sql.Timestamp;
  * Created by FlipBook TP300LD on 15.11.2016.
  */
 @Entity
-@Table(name = "comments", schema = "adsmanager", catalog = "")
+@Table(name = "comments", schema = "adsmanager")
 public class CommentsEntity implements Serializable{
     private int idComment;
     private String user;

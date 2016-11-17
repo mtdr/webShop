@@ -41,6 +41,11 @@ public class commentsServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String lang = request.getParameter("lang");
         String comment = request.getParameter("comment");
+        System.out.println(comment);
+        String comment1 = new String (comment.getBytes("windows-1251"), "UTF-8");
+        System.out.println(comment1);
+        comment = comment1;
+
         PrintWriter out = response.getWriter();
         if (!"".equals(comment)) {
             Session hSession = HibernateSessionFactory.getSessionFactory().openSession();

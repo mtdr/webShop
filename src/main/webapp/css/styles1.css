@@ -1008,6 +1008,7 @@ option {
 }
 
 #current-time {
+    margin: 10px;
     float: right;
     font-size: 20px;
 }

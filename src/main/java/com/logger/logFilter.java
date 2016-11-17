@@ -1,7 +1,11 @@
 package com.logger;
 
+import org.logicalcobwebs.proxool.ProxoolException;
+import org.logicalcobwebs.proxool.configuration.PropertyConfigurator;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
@@ -16,7 +20,10 @@ public class logFilter implements Filter {
         HttpServletRequest httpReq = (HttpServletRequest) request;
         String ip = httpReq.getRemoteAddr();
         String uri = httpReq.getRequestURI();
-        conteхt.log("ip: " + ip + ", uri: " + uri);
+        HttpServletResponse httpRes = (HttpServletResponse) response;
+        String status = Integer.toString(httpRes.getStatus());
+
+        conteхt.log("ip: " + ip + ", uri: " + uri + ", status: " + status + "\n");
         chаin.doFilter(request, response);
     }
 

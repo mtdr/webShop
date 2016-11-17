@@ -11,7 +11,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <c:if test="${empty pageContext.request.parameterMap.lang[0]}">
         <c:set var="lang" value="ru_RU"/>
     </c:if>
@@ -29,7 +29,6 @@
     </c:if>
     <fmt:setBundle basename="shop"/>
     <title><fmt:message key="accountLabel"/></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/styles1.css">
     <script src="../js/infoDisplay.js"></script>
     <script>setInterval(function(){myTimer('${lang}')},1000);</script>
@@ -90,7 +89,8 @@
     </div>
     <div class="user-comment">
         <h2><fmt:message key="user-comment"/></h2>
-        <textarea id="comment" name="comment" rows="10" cols="45"></textarea><br>
+        <textarea id="comment" name="comment" rows="10" cols="45"></textarea>
+        <br>
         <input class="button-send-comment" type="submit" value="<fmt:message key="send-comment"/>" onclick="loadXMLDoc()">
     </div>
     <div id="list-of-comments">

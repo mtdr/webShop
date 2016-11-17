@@ -564,15 +564,11 @@ header {
     cursor: pointer;
 }
 
-#checkout-button, #clearBasketButton:hover {
+#checkout-button:hover, #clearBasketButton:hover {
     background-color: darkred;
 }
 
-#checkout-button, #clearBasketButton:active {
-    background-color: red;
-}
-
-#checkout-button, #clearBasketButton:focus {
+#checkout-button:focus, #clearBasketButton:focus {
     outline: none;
 }
 
